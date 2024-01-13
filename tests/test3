@@ -1,0 +1,7 @@
+int x,y;
+
+/*ceil and floor*/
+x = [+5/2+];
+y = [-5/2-];
+
+afficher(x/y);

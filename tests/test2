@@ -1,0 +1,17 @@
+rationnel x,y;
+x = 1/1;
+y = 1/1;
+
+repeter
+    repeter
+        y = y * pgcd(8,6);
+    jusque y>8/1;
+    y = y + 1;
+    x = x+1;
+jusque x>5/1;
+
+afficher(x);
+
+true ? {
+    afficher(y);
+};

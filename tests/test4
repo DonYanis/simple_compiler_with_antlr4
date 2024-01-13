@@ -1,0 +1,8 @@
+int x;
+rationnel y;
+
+x = lire();
+y = x/4;
+
+/*pourcentage ex : %5/4 ==> 5/4 = 1.25 = 125%*/
+afficher(%y/1);

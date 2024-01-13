@@ -1,0 +1,19 @@
+int x,y,z,w;
+true ? 
+{
+    false ? {
+        x=2;
+    }:
+    {
+        x=6;
+        z=ppcm(2,3);
+    };
+    y=denum(4/8);
+} : 
+{
+    x = 4;
+};
+
+w=pgcd(15,9);
+
+afficher(w/x);
