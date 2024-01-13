@@ -80,3 +80,42 @@ HALT
     ```
 
     (Or `java -jar $HOME/bin/MVaP.jar -d C.mvap.cbap` for debug mode.)
+
+
+# Using the Rationnel compiler 
+### Tests are in "/tests"
+* example : 
+    ```bash
+    rationnel x,y;
+    x = 1/1;
+    y = 1/1;
+
+    repeter
+        repeter
+            y = y * pgcd(8,6);
+        jusque y>8/1;
+        y = y + 1;
+        x = x+1;
+    jusque x>5/1;
+
+    afficher(x);
+
+    true ? {
+        afficher(y);
+    };
+    ```
+
+1.  Generating lexer and parser Java files based on the rules defined in the grammar file (Rationnel.g4), then Java Compilation with javac : 
+
+    ```bash
+    antlr4 Rationnel.g4 && javac Rationnel*.java
+    ```
+
+2. Runnig a test code and generating MVaP source code
+    ```bash
+    cat test1 | grun Rationnel start  > c.mvap
+    ```
+3. Assembling source code and executing it : 
+    ```bash
+    java -cp $CLASSPATH MVaPAssembler c.mvap &&  java -jar $HOME/bin/mvap/MVaP.jar  c.mvap.cbap
+    ```
